@@ -11,7 +11,7 @@ public class ArrayBlockingQueueExample {
  
     class PutThread implements Runnable {
  
-        @Override
+        
         public void run() {
             try {
                 int i = 0;
@@ -30,7 +30,7 @@ public class ArrayBlockingQueueExample {
  
     class TakeThread implements Runnable {
  
-        @Override
+        
         public void run() {
             try {
                 while (true) {

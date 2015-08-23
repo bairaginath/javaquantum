@@ -7,7 +7,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 public class PriorityBlockingQueueExample {
 	
 	public static void main(String[] args) {
-		BlockingQueue bq=new PriorityBlockingQueue();
+		final BlockingQueue bq=new PriorityBlockingQueue();
 		
 		new Thread(new Runnable(){
 			public void run(){

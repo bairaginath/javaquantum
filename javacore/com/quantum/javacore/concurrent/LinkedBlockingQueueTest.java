@@ -7,7 +7,8 @@ public class LinkedBlockingQueueTest {
 	
     //Producer class that will item in LinkedBlockingQueue object
     class Producer implements Runnable {
-        @Override
+       
+    
         public void run() {
             try {
                 int i=1;
@@ -26,7 +27,7 @@ public class LinkedBlockingQueueTest {
  
     //Consumer class that will consume or remove item from LinkedBlockingQueue object
     class Consumer implements Runnable {
-        @Override
+        
         public void run() {
             try {
                 int i=1;

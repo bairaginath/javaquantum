@@ -9,9 +9,9 @@ public class SynchronousQueueExample {
 	public static void main(String[] args) {
 		
 		
-    BlockingQueue bq=new SynchronousQueue();
-    String event = "SYNCHRONOUS_EVENT";
-    String another_event ="ANOTHER_EVENT";
+   final BlockingQueue<String> bq=new SynchronousQueue<String>();
+   final  String event = "SYNCHRONOUS_EVENT";
+   final String another_event ="ANOTHER_EVENT";
 
 		
 		new Thread(new Runnable(){

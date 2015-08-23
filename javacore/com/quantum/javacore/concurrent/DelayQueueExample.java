@@ -44,7 +44,7 @@ class BreadEaterRunnable implements Runnable {
         this.breadQueue = breadBox;
     }
  
-    @Override
+    
     public void run() {
         while (true) {
             try {
@@ -69,7 +69,7 @@ class BreadProducerRunnable implements Runnable {
         this.breadBox = breadBox;
     }
  
-    @Override
+   
     public void run() {
         while (true) {
             System.out.println("adding bread");
@@ -99,7 +99,7 @@ class WheatBread implements Delayed {
         this.startTime = startTime + System.currentTimeMillis();
     }
  
-    @Override
+   
     public int compareTo(Delayed o) {
         int result = 0;
         if (this.getDelay(TimeUnit.MILLISECONDS) <= o.getDelay(TimeUnit.MILLISECONDS)) {
@@ -110,7 +110,7 @@ class WheatBread implements Delayed {
  
     }
  
-    @Override
+   
     public long getDelay(TimeUnit unit) {
         long delaytime = unit.convert((this.startTime - System.currentTimeMillis()), TimeUnit.MILLISECONDS );
         return delaytime;
