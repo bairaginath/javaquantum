@@ -73,7 +73,7 @@ CyclicBarrier cb;
         {
         	//When the reset() method is called, a BrokenBarrierException is raised in the 
         	// FiftyClass' run(). So, FiftyClass comes out of waiting state.
-        	cb.reset();
+        	//cb.reset();
             // Slow down, guys! Let the VIP go!
             cb.await();
         }catch(Exception e){
