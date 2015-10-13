@@ -73,7 +73,7 @@ public class KthNodeAlternativeReverse {
         sll.insertLinkedList(sll,15);
         sll.travelLinkedList(sll);
         System.out.println("Kth node alternative reverse");        
-        sll=kthNodeAlternativeReverse(sll,7);        
+        sll=kthNodeAlternativeReverse(sll,3);        
         sll.travelLinkedList(sll);
 }
 }

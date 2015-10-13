@@ -85,6 +85,7 @@ public class AlternativeChangeNode {
         sll.insertLinkedList(sll,8);
         sll.insertLinkedList(sll,9);
         sll.insertLinkedList(sll,10);
+        sll.insertLinkedList(sll,11);
         sll.travelLinkedList(sll);
         System.out.println("alternatively Change Nodes");
         SingleLinkedList sss=sll.next;
