@@ -1,4 +1,4 @@
-package com.quantum.javacore.oops;
+package com.quantum.javacore.innerclass;
 
 
 interface Inner

@@ -9,8 +9,8 @@ public  class Clone implements Cloneable {
         ob1.x++;
         Clone ob2=ob;
         ob2.x+=5;
-        System.out.println(ob);
-        System.out.println(ob1 +"   "+ob.x);
-        System.out.println(ob2 +"   "+ob1.x);
+        System.out.println(ob +"    "+ob.x);
+        System.out.println(ob1 +"   "+ob1.x);
+        System.out.println(ob2 +"   "+ob2.x);
     }
 }
