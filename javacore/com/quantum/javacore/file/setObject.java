@@ -20,8 +20,8 @@ public class setObject {
        
          FileOutputStream fos=new FileOutputStream("C:\\Users\\BAIRAGI\\Desktop\\mytext.txt",true);
          ObjectOutputStream oos=new ObjectOutputStream(fos);
-          Login_file ob1=new Login_file("rabindra","lokesh");
-          Login_file ob2=new Login_file("sibaram","ramesh");
+          LoginFile ob1=new LoginFile("rabindra","lokesh");
+          LoginFile ob2=new LoginFile("sibaram","ramesh");
           oos.writeObject(ob1);
           oos.writeObject(ob2);
           oos.close();

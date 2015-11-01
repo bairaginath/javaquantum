@@ -20,9 +20,9 @@ public class getObject {
           ObjectInputStream ois=new ObjectInputStream(fis);
         
           try {
-              Login_file T;
+              LoginFile T;
               
-              while((T=(Login_file)ois.readObject())!=null)
+              while((T=(LoginFile)ois.readObject())!=null)
               {
                   T.display();
               }

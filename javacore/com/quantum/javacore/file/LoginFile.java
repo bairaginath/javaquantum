@@ -4,11 +4,11 @@ package com.quantum.javacore.file;
 import java.io.Serializable;
 
 
-public class Login_file implements Serializable
+public class LoginFile implements Serializable
 {
     String name;
     String password;
-    Login_file(String name,String password)
+    LoginFile(String name,String password)
     {
         this.name=name;
         this.password=password;
