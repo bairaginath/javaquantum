@@ -39,6 +39,26 @@ method to Horse, it wouldn't be an override of Animal's eat() method.*/
 
 
 class Parents {
+	public Parents covariantReturn(){
+		System.out.println("In side Parents CovariantReturn");
+		return new Parents();
+	}
+	public synchronized void synchronizedMethod(){
+		System.out.println("In side Parent SynchronizedMethod");
+	}
+	
+	public strictfp void strictfpMethod(){
+		System.out.println("In side Parent strictfp method");
+	}
+	
+	public final void finalMethod(){
+		System.out.println("In side Parent final method");
+	}
+	
+	public static void staticMethod(){
+		System.out.println("In side Parent static method");
+	}
+	
 	public void display(){
 		System.out.println("Inside Parents Display Method");
 	}
@@ -57,17 +77,19 @@ class Parents {
 
 class Child extends Parents {
 	//public void checkedException() throws SQLException //error
-	//public void checkedException() throws Exception //override
+	//public void checkedException() throws IOException //override
 	//public void checkedException() throws Exception //not override,error 
 	public void checkedException() throws FileNotFoundException //override
 	{
 	  System.out.println("In side child ExecptionCheck");	
 	}
 	
-	//public void unCheckedException() throws ArithmeticException //error
+	//public void unCheckedException() throws Exception //error
 	
-	//public void unCheckedException() throws RuntimeException
-	public void unCheckedException() throws ArithmeticException 
+	//public void unCheckedException() throws RuntimeException //override
+	//public void unCheckedException() throws ArithmeticException //override
+	//public void unCheckedException() //override
+	public void unCheckedException() throws IllegalArgumentException //override not related to parents method runtime exception
 	{
 	  System.out.println("In side child UnCheckedExecption");	
 	}
@@ -75,21 +97,67 @@ class Child extends Parents {
 	public void display(){
 		System.out.println("Inside Child Display Method");
 	}
+	public void parentsDisplay(){
+		super.display();
+	}
+	
+	//public final void finalMethod() //can't override final method from parents
+	//public void finalMethod() //can't override final method form parents
+	/*{ 
+		System.out.println("In side final method");
+	}*/
+	
+	public static void staticMethod() //not override but we can redefine
+	//public void staticMethod() //This instance method can't override parents  static method
+	{
+		System.out.println("In side static method"); 
+	}
+	
+//covariant Return type example
+	//public Child covariantReturn() //override it doesn't depends on parents return type
+	public Parents covariantReturn() //override 
+	{
+        System.out.println("Inside Child Covareint Return");
+		return new Child();
+	}
+	
+//	public synchronized void synchronizedMethod() //override
+	public void synchronizedMethod() //override
+	{
+		System.out.println("In side Child SynchronizedMethod");
+	}
+	
+//	public strictfp void strictfpMethod() //override
+	public void strictfpMethod() //override
+	{
+		System.out.println("In side Child strictfp method");
+	}
+	
+	
+	
+	
 }
 
 public class OverriddenExample {
 	
 	public static void main(String[] args) {
 		Parents parents=new Child();
-		parents.display();
+		parents.display();	
 		parents.show();
 		try{
 		parents.checkedException();
 		}catch(Exception e){}
 		
 		parents.unCheckedException();
+		//parents.parentsDisplay(); we can't access non-override child method from parents instance
+		new Child().parentsDisplay(); //we can access parents display method
 		
+		parents.finalMethod();
+		parents.staticMethod();
+		parents.covariantReturn();
 		
+		parents.synchronizedMethod();
+		parents.strictfpMethod();
 	}
 
 }

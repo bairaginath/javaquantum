@@ -44,10 +44,10 @@ public class ArrayBlockingQueueExample {
     }
  
     public static void main(final String... args) {
-        final Thread pt = new Thread(new ArrayBlockingQueueExample().new PutThread());
-        pt.start();
- 
-        final Thread tt = new Thread(new ArrayBlockingQueueExample().new TakeThread());
+    	ArrayBlockingQueueExample abqe=new ArrayBlockingQueueExample();
+        final Thread pt = new Thread(abqe.new PutThread());
+        pt.start(); 
+        final Thread tt = new Thread(abqe.new TakeThread());
         tt.start();
     }
 } 

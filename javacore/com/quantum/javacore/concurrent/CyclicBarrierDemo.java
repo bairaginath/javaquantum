@@ -1,6 +1,11 @@
 package com.quantum.javacore.concurrent;
 
 import java.util.concurrent.*;
+
+//it is a synchronisation aid that allows a set of threads to wait for each other to reach a common barrier point.
+//The barrier is called cyclic because it can be re-used after the waiting threads are 
+//released and that is where it is different than CountdownLatch. We can reuse CyclicBarrier 
+//by calling reset() method which resets the barrier to its initial state.
 public class CyclicBarrierDemo
 {
     public static void main(String args[])
