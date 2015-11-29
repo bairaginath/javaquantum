@@ -1,4 +1,4 @@
-package com.quantum.alogrithm.stringmatching;
+package com.quantum.algorithm.stringmatching;
 
 import java.util.Arrays;
 
