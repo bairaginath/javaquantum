@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class NextHighest
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
      //int x=15432;
       int x=45321;
      String temp="";

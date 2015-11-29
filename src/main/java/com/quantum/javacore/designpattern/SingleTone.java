@@ -1,6 +1,6 @@
 package com.quantum.javacore.designpattern;
 
-import com.sun.xml.internal.ws.encoding.soap.DeserializationException;
+
 import java.io.Externalizable;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

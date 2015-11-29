@@ -19,6 +19,7 @@ public class CheckForDuplicate {
 		int A[]={2,3,4,1,7,9,5,10,6,0,8};
 		int B[]={2,3,1,2,4};
 		checkForDuplicate(A);
+		
 		checkForDuplicate(B);
 	}
 

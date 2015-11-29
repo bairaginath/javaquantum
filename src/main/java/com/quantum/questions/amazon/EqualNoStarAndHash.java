@@ -44,7 +44,5 @@ public class EqualNoStarAndHash {
     public static void main(String[] args) {
         String s="32332**##44343*#**##";
         longestEqualNoStarAndHashSubArray(s.toCharArray());
-        
-        
     }
 }
