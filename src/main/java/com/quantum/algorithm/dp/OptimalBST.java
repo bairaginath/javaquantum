@@ -12,7 +12,7 @@ import java.util.Arrays;
  *
  * @author veradocs-web
  */
-public class Optimal_BST {    
+public class OptimalBST {    
 
     
 public double optimalBST(double p[], double q[], int n)
@@ -71,7 +71,7 @@ int sum(double freq[], int i, int j)
 }
 
     public static void main(String[] args) {
-        Optimal_BST obst=new Optimal_BST();
+        OptimalBST obst=new OptimalBST();
 //        int keys[] = {1,2,3,4,5};
         double p[] = {0,0.15,0.10,0.05,0.10,0.20};
         double q[]={0.05,0.10,0.05,0.05,0.05,0.10};
