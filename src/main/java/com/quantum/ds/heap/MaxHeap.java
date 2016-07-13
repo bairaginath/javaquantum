@@ -1,4 +1,4 @@
-package com.quantum.ds.priority_queue;
+package com.quantum.ds.heap;
 
 import java.util.ArrayList;
 

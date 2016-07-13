@@ -1,17 +1,16 @@
-package com.quantum.ds.priority_queue;
+package com.quantum.ds.heap;
 
 import java.util.Arrays;
 
 public class MaxHeapArray {
 	
-	private static void swap(int A[],int x,int y){
+	public static void swap(int A[],int x,int y){
 		int temp=A[x];
 		A[x]=A[y];
-		A[y]=temp;
-		
+		A[y]=temp;		
 	}
 	
-	private static Integer parent(int A[],int i){
+	public static Integer parent(int A[],int i){
         if(i==0){
         	return null;
         }
@@ -63,13 +62,30 @@ public class MaxHeapArray {
 	  }
   }
   
+
+  
+  public static int[] heapSort(int A[]){
+	  int output[]=new int[A.length];
+	  int count=0;
+	  buildMaxHeap(A);	 //O(n) 
+	  for(int i=A.length-1;i>1;i--){ //O(n*logn)
+		  swap(A,0,i);
+		  output[count++]=A[A.length-1];
+		  A=Arrays.copyOf(A,i);
+		  maxHeapify(A,0);		 
+	  }
+	  output[count++]=A[0];
+	  output[count]=A[1];
+	  return output; 
+  }
+  
   public static void main(String[] args) {
-	int A[]={5,3,7,2,9,6,1,4,10,8,0,11};
-	int B[]={5,3,7,2,9,6,1,4,10,8,0,11,12};
-	buildMaxHeap(A);
-    System.out.println(Arrays.toString(A));
-    buildMaxHeap(B);
-    System.out.println(Arrays.toString(B));
+   int A[]={5,3,7,2,9,6,1,4,10,8,0,11};
+   buildMaxHeap(A);
+   System.out.println(Arrays.toString(A));
+   int B[]={5,3,7,2,9,6,1,4,10,8,0,11,12};	
+   heapSort(B);
+   System.out.println(Arrays.toString(heapSort(B)));
 }
 
 }
