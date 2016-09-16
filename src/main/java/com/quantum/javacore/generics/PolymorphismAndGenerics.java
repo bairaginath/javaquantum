@@ -1,6 +1,8 @@
 
 package com.quantum.javacore.generics;
 
+//the type of the variable 	declaration must match in generic
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,10 +86,10 @@ public void checkAnimalsArrayList(ArrayList<Animal> animals){
 		//pog.checkAnimalSubObject(dogObject); // we can't pass Animal Type to Dog Type Parameter
 		pog.checkAnimalSubObject(new Dog<Integer>());
 		List<Animal> animalsArrayListObject=new ArrayList<Animal>();
-		//pog.checkAnimalsArrayList(animalsArrayListObject); //We can't pass List Type to ArrayList Type Parameter
+//		pog.checkAnimalsArrayList(animalsArrayListObject); //We can't pass List Type to ArrayList Type Parameter
 		pog.checkAnimalsArrayList(new ArrayList<Animal>());
 		
-		//pog.passAnyObject(new ArrayList<Dog>()); //mismatch Type caste
+	    //pog.passAnyObject(new ArrayList<Dog>()); //mismatch Type caste
 		
 		Dog dogArray[]=new Dog[3];
 		pog.checkAnimalsArray(dogArray);

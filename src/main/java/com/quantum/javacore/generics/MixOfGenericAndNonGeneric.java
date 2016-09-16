@@ -26,6 +26,10 @@ public class MixOfGenericAndNonGeneric {
        integerList.add(2);
        integerList.add(3);
        inserter(integerList); 
+       System.out.println("Integer size "+integerList.size());
+       for(Object x:integerList)
+           System.out.println(x);
+   
        for(Integer x:integerList)
             System.out.println(x);
     }    
