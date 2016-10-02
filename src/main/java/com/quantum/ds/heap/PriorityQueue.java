@@ -6,7 +6,7 @@ public class PriorityQueue {
 	 int heapArray[]=null;
 	 
 	  public PriorityQueue(int heapArray[]){
-		  MaxHeapArray.buildMaxHeap(heapArray);
+		  MaxHeapCLRS.buildMaxHeap(heapArray);
 		  this.heapArray=heapArray;
 	  }
 
@@ -23,7 +23,7 @@ public class PriorityQueue {
 		int max=heapArray[0];
 		heapArray[0]=heapArray[heapArray.length-1];
 		heapArray=Arrays.copyOf(heapArray,heapArray.length-1);
-		MaxHeapArray.maxHeapify(heapArray,0);
+		MaxHeapCLRS.maxHeapify(heapArray,0);
 		return max;
 	}
 	
@@ -33,9 +33,9 @@ public class PriorityQueue {
 			throw new RuntimeException("new key is smaller then current key");
 		}
 		heapArray[index]=key;
-		while(index > 0 && heapArray[MaxHeapArray.parent(heapArray,index)]< heapArray[index]){
-			MaxHeapArray.swap(heapArray,MaxHeapArray.parent(heapArray,index),index);
-			index=MaxHeapArray.parent(heapArray,index);
+		while(index > 0 && heapArray[MaxHeapCLRS.parent(heapArray,index)]< heapArray[index]){
+			MaxHeapCLRS.swap(heapArray,MaxHeapCLRS.parent(heapArray,index),index);
+			index=MaxHeapCLRS.parent(heapArray,index);
 		}
 		
 	}

@@ -2,7 +2,7 @@ package com.quantum.ds.heap;
 
 import java.util.Arrays;
 
-public class MaxHeapArray {
+public class MaxHeapCLRS {
 	
 	public static void swap(int A[],int x,int y){
 		int temp=A[x];

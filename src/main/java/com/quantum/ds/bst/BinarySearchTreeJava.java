@@ -10,26 +10,26 @@ public class BinarySearchTreeJava<E> {
 		return root;
 	}
 
-	public void insert(Node<E> root,E value) {
+	public Node<E> insert(Node<E> root,E value) {
       if(root==null){
-    	  return;
+    	  return null;
       }
       if(root.compareTo(value)>0){
     	  if(root.left!=null){
-    		  insert(root.left,value);
+    		 return insert(root.left,value);
     	  }
     	  else{
     		  root.left=new Node<E>(value,null,null);
-    		  return;
+    		  return root.left;
     	  }
       }
       else{
     	  if(root.right!=null){
-    		  insert(root.right,value);
+    		 return insert(root.right,value);
     	  }
     	  else{
     		  root.right=new Node<E>(value,null,null);
-    		  return;
+    		  return root.right;
     	  }
       }
 	}
@@ -43,6 +43,10 @@ public class BinarySearchTreeJava<E> {
 			this.data = data;
 			this.left = left;
 			this.right = right;
+		}
+		
+		Node(){
+			
 		}
 
 		@Override
@@ -65,24 +69,23 @@ public class BinarySearchTreeJava<E> {
 		System.out.println();
 	}
 
-	public boolean add(E value) {
+	public Node<E> add(E value) {
 		if(root==null){
 			root=new Node<E>(value,null,null);
-			return true;
+			return root;
 		}
-		insert(root,value);
-		return true;
+		return insert(root,value);
 	}
 
 	public static void main(String[] args) {
 		BinarySearchTreeJava<Integer> btj = new BinarySearchTreeJava<Integer>();
-		btj.add(4);
-		btj.add(2);
-		btj.add(6);
-		btj.add(1);
-		btj.add(3);
-		btj.add(5);
-		btj.add(7);
+		System.out.println(btj.add(4).data);
+		System.out.println(btj.add(2).data);
+		System.out.println(btj.add(6).data);
+		System.out.println(btj.add(1).data);
+		System.out.println(btj.add(3).data);
+		System.out.println(btj.add(5).data);
+		System.out.println(btj.add(7).data);
 		btj.inorder();
 		BinarySearchTreeJava<Double> btj1 = new BinarySearchTreeJava<Double>();
 		btj1.add(4.0);
