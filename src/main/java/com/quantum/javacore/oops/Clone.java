@@ -12,5 +12,6 @@ public  class Clone implements Cloneable {
         System.out.println(ob +"    "+ob.x);
         System.out.println(ob1 +"   "+ob1.x);
         System.out.println(ob2 +"   "+ob2.x);
+        System.out.println(ob.hashCode()==ob.clone().hashCode());
     }
 }

@@ -30,7 +30,7 @@ class b
         System.out.println(p);
     }
 }
-public class Different_Object {
+public class DifferentObject {
     
     
     public static void main(String[] args) {

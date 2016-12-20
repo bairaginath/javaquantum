@@ -36,12 +36,12 @@ public class ReferenceVariableCasting {
 	//Downcasting
 	
 	try{
-	Dog dog=(Dog)new Animal(); //it throws java.lang.ClassCastException
-	}catch(ClassCastException cce){}
+	Dog dog1=(Dog)new Animal(); //it throws java.lang.ClassCastException
+	}catch(ClassCastException cce){cce.printStackTrace();}
 	
 	try{
 	Dog dog=(Dog)Animal.getAnimal("Cat"); //it throws ClassCastException
-	}catch(ClassCastException ccs){}
+	}catch(ClassCastException ccs){ccs.printStackTrace();}
 	
 	Dog dog=(Dog)Animal.getAnimal("Dog"); 
 	
