@@ -46,10 +46,10 @@ CyclicBarrier cb;
         // uncontrollable due to heavy rush
         try
         {
-            cb.await();
+            cb.await();        
         }catch(Exception e){
             // Then, say, we can't wait
-            System.out.println("We can't wait ");
+            System.out.println("We can't wait  +50 ");
         }
         
         // They completed their task!!
@@ -82,7 +82,7 @@ CyclicBarrier cb;
             // Slow down, guys! Let the VIP go!
             cb.await();
         }catch(Exception e){
-            System.out.println("We can't wait");
+            System.out.println("We can't wait +100");
         }
         
         // Great, you got it for 100!

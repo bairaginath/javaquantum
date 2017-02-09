@@ -14,7 +14,7 @@ public class SynchronousQueueExample {
    final String another_event ="ANOTHER_EVENT";
 
 		
-		new Thread(new Runnable(){
+		Thread producer=new Thread(new Runnable(){
 			public void run(){			
 					
 					try{
@@ -26,11 +26,12 @@ public class SynchronousQueueExample {
 				
 			}
 			
-		},"producer").start();
+		},"producer");
 		
-		new Thread(new Runnable(){
+		Thread consumer=new Thread(new Runnable(){
 			public void run(){					
 				try {
+					System.out.println("inside consumer thread");
 					String event =(String)bq.take();
 					String event1 =(String)bq.take();
 					String event2=(String)bq.take();
@@ -46,7 +47,10 @@ public class SynchronousQueueExample {
 
 					
 				}				
-		},"consumer").start();
+		},"consumer");
+		
+		consumer.start();
+		producer.start();
 		
 		
 	}

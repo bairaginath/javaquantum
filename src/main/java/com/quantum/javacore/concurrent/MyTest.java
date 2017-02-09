@@ -1,37 +1,27 @@
 package com.quantum.javacore.concurrent;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-
+import java.util.Stack;
 
 
 public class MyTest {
 	
-	public static void main(String[] args) {
-		ExecutorService es=Executors.newFixedThreadPool(10);
-		for(int i=0;i<10;i++){
-		Future future=es.submit(new Callable(){
-			
-			
-			public String call(){
-				System.out.println(Thread.currentThread().getName());
-			   return "bairagi";	
-			}
-			public void run(){
-				System.out.println(Thread.currentThread().getName());
-			}
-		});
-		try{
-		System.out.println(future.get());
-		}catch(ExecutionException ee){}
-		 catch(InterruptedException ie){};
-		
-	   }
-		es.shutdown();
-	}
+	static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
 
+
+	
+	public static void main(String[] args) {
+  
+	  System.out.println(hash(new MyTest()));
+	  System.out.println(hash(new MyTest()));
+	  MyTest m1=new MyTest();
+	  int hash=m1.hashCode();
+	  System.out.println(hash);
+	  MyTest m2=new MyTest();
+	  System.out.println(m2.hashCode());
+	  System.out.println( m2.hashCode() & (64 - 1));
+	  throw new java.lang.OutOfMemoryError();
+ }
 }

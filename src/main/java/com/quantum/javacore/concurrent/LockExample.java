@@ -15,7 +15,7 @@ public class LockExample extends Thread {
 	
 	Lock lock = new ReentrantLock();
 	
-	/*public void run(){
+/*	public void run(){
 		synchronized (this) {
 			
 			for(int i=0;i<10;i++){
@@ -27,13 +27,22 @@ public class LockExample extends Thread {
 		}
 		}*/
 	
-	public void run(){
-		//lock.lock();
-		/*try{
-		  lock.lockInterruptibly();
-		}catch(InterruptedException ie){}*/
+/*	public void run(){
+		lock.lock();
+		try{
+		 for(int i=0;i<10;i++){
+			 Thread.sleep(1000);
+			 System.out.println(Thread.currentThread().getName()+" "+i);
+			 if(i==5)
+			   lock.lockInterruptibly();
+		 }
 		
-		 // lock.tryLock();
+		}catch(InterruptedException ie){}
+		
+		  lock.unlock();
+	}*/
+	
+	public void run(){	
 		try{
 		  lock.tryLock(5000, TimeUnit.MILLISECONDS);
 		}catch(InterruptedException ie){}

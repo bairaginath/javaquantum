@@ -13,7 +13,7 @@ public class ScheduledExecutorServiceExample {
 		
 		ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
 		
-/*		ScheduledFuture scheduledFutureCallable =
+		ScheduledFuture scheduledFutureCallable =
 			    scheduledExecutorService.schedule(new Callable() {
 			        public Object call() throws Exception {
 			            System.out.println("Executed!");
@@ -39,10 +39,10 @@ public class ScheduledExecutorServiceExample {
 			    TimeUnit.SECONDS);
 		try {
 		System.out.println(scheduledFutureRunnable.get());
-		}catch(Exception e){}*/
+		}catch(Exception e){}
 		
 		
-		
+		/*
 		scheduledExecutorService.scheduleAtFixedRate(new Runnable(){
 			public void run(){
 				
@@ -50,22 +50,22 @@ public class ScheduledExecutorServiceExample {
 				
 			}
 			
-			},20,100,TimeUnit.SECONDS);
-		
+			},20,10,TimeUnit.SECONDS);
+		*/
 		
 		
 		
 	//This method works very much like scheduleAtFixedRate() except that the period is interpreted differently	
-		
-		/*scheduledExecutorService.scheduleWithFixedDelay(new Runnable(){
+	/*	
+		scheduledExecutorService.scheduleWithFixedDelay(new Runnable(){
 				public void run(){
 					
 					System.out.println("In Side schedule At Fixed Rate");
 					
 				}
 				
-				},20,100,TimeUnit.SECONDS);*/
-		
+				},20,10,TimeUnit.SECONDS);
+		*/
 		
 		
 		
