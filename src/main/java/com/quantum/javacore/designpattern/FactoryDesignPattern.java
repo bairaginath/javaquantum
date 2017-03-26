@@ -6,7 +6,7 @@ interface Vehicle {
     void howToDrive();
 }
 
-class Car implements Vehicle {
+class Car1 implements Vehicle {
 	
 	public void register(){
 		System.out.println("In Side Car register");
@@ -33,7 +33,7 @@ class Bus implements Vehicle {
 class VehicleFactory{
 	static Vehicle getVehicleInstance(String objectName){
 		   if(objectName.equalsIgnoreCase("car")){
-			   return new Car();
+			   return new Car1();
 		   }
 		   if(objectName.equalsIgnoreCase("bus")){
 			   return new Bus();

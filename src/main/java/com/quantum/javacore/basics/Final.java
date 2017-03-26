@@ -12,18 +12,19 @@ package com.quantum.javacore.basics;
 public class Final {
      final int x;
 
-    public Final() {
-        x=10;
+    public Final(int x) {
+        this.x=x;
         
     }
     
     
      public static void main(String[] args) {
-//        Final ob=new Final(5);
+        Final ob=new Final(5);
 //        Final ob1=new Final(6);
 //        ob.x=7;
 //         System.out.println(ob.x);
-    }
+       //ob.x++; final variable can't assigned
+     }
      
            
      

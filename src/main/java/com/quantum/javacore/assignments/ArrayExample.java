@@ -1,5 +1,14 @@
 package com.quantum.javacore.assignments;
 
+import java.util.Arrays;
+
+class Animal {
+	
+}
+class Dog extends Animal {
+	
+}
+
 public class ArrayExample {
 	
 	public static void main(String[] args) {
@@ -19,6 +28,22 @@ public class ArrayExample {
 		
 //		If you assign an array to a previously declared array reference, the array you're
 //		assigning must be the same dimension as the reference you're assigning it to.
+		byte x='a';
+		System.out.println(x);
+		byte myByte[]="bairagi".getBytes();
+		System.out.println(Arrays.toString(myByte));
+		
+		int myInt[]=new int[5];
+		myInt[0]=x;
+		Integer myInteger[]=new Integer[7];
+		Byte bigByte[]=new Byte[9];
+		//myInt=myByte;
+		//myInteger=myByte;
+		//myInteger=bigByte;		
+		Animal animal[]=new Animal[4];
+		Dog dog[]=new Dog[3];
+		animal=dog;
+		System.out.println(animal.length);
 		
 
 		

@@ -1,4 +1,4 @@
-package com.quantum.javacore.declarations_and_access_controls;
+package com.quantum.javacore.accesscontrols;
 
 // conceptual example of how you can think  about enums
 class Dept {

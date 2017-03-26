@@ -16,7 +16,7 @@ interface fruits<T>
 }
 
     
-public class Generic_type<T> implements fruits<T>
+public class GenericType<T> implements fruits<T>
 {
   
     public void tellTeste( Object fruits) {
@@ -29,10 +29,10 @@ public class Generic_type<T> implements fruits<T>
 
     public static void main(String[] args) {
        Banana b=new Banana();
-       Generic_type<Banana> ob1=new Generic_type<Banana>();
+       GenericType<Banana> ob1=new GenericType<Banana>();
         ob1.tellTeste(b);
         Orange o=new Orange();
-        Generic_type<Orange> ob2=new Generic_type<Orange>();
+        GenericType<Orange> ob2=new GenericType<Orange>();
         ob2.tellTeste(o);
     }
         

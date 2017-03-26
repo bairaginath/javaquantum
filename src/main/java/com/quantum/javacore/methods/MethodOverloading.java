@@ -1,6 +1,12 @@
 package com.quantum.javacore.methods;
 
-public class MethodOverloading {
+class Parents {
+	public void display(int number,int amout,String name){
+		System.out.println("in side parents class");
+	}
+}
+
+public class MethodOverloading extends Parents {
 	
 	public void display(int number,String name){
 		System.out.println("In Side of Display Method");
@@ -15,6 +21,7 @@ public class MethodOverloading {
 		mol.display(5);
 		mol.display(5,"bairagi");
 		mol.display(5,"Bairagi","Nath");
+		mol.display(434,343,"bairagi");
 	}
 
 }

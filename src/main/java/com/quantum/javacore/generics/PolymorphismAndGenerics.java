@@ -82,8 +82,8 @@ public void checkAnimalsArrayList(ArrayList<Animal> animals){
 		//pog.passParentToChildArgs(parent); // we can't pass Parent Reference to Chlid Args
 		pog.passParentToChildArgs(new Child());
 		
-		Animal<Integer> dogObject=new Dog<Integer>();
-		//pog.checkAnimalSubObject(dogObject); // we can't pass Animal Type to Dog Type Parameter
+		Animal<Integer> animalObject=new Dog<Integer>();
+		//pog.checkAnimalSubObject(animalObject); // we can't pass Animal Type to Dog Type Parameter
 		pog.checkAnimalSubObject(new Dog<Integer>());
 		List<Animal> animalsArrayListObject=new ArrayList<Animal>();
 //		pog.checkAnimalsArrayList(animalsArrayListObject); //We can't pass List Type to ArrayList Type Parameter

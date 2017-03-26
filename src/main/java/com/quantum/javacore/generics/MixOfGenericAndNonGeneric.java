@@ -15,7 +15,12 @@ import java.util.List;
  */
 
 
-public class MixOfGenericAndNonGeneric {    
+public class MixOfGenericAndNonGeneric { 
+	
+	  public  static void inserter1(List<Object> list){
+	       list.add(new String("bairagi"));
+	    } 
+	
   public  static void inserter(List list){
        list.add(new String("bairagi"));
     }    
@@ -26,6 +31,7 @@ public class MixOfGenericAndNonGeneric {
        integerList.add(2);
        integerList.add(3);
        inserter(integerList); 
+      // inserter1(integerList); //not valid for List<Integer>
        System.out.println("Integer size "+integerList.size());
        for(Object x:integerList)
            System.out.println(x);

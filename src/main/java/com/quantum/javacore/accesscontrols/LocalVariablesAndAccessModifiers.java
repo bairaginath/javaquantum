@@ -1,4 +1,4 @@
-package com.quantum.javacore.declarations_and_access_controls;
+package com.quantum.javacore.accesscontrols;
 
 public class LocalVariablesAndAccessModifiers {
 	

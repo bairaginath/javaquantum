@@ -46,6 +46,7 @@ class AnimalHolder < T extends Animal > { // use "T" instead  of "?"
 //While the question mark works when declaring a reference for a variable,it does NOT work for generic class and method declarations.
 
 //class NumberHolder <? extends Number>{}
+//public < ? extends Number > void makeArrayList1(T t) { }
 
 class X { public <X> X(X x) { } }
 
@@ -65,6 +66,15 @@ class CreateAnArrayList {
 		
 	}
 
+}
+
+class Amount<T extends Number>{}
+//class AmountWildCard<? extends Number>{} //question mark does NOT work for generic class declarations
+
+class Abc {
+	<T extends Number> void setValue(T t){}
+	//<? extends Number> void setValue1(T t){} //question mark does NOT work for generic method declarations
+    List<? extends Number> amount; //question mark valid for referance declarations
 }
 
 public class GenericDeclare < T > { // "T" is for the type	

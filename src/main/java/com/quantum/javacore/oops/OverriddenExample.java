@@ -73,6 +73,10 @@ class Parents {
 	{
 	  System.out.println("In side Parents UnCheckedExecption");	
 	}
+	
+	public void noExceptionThrows(){
+		
+	}
 }
 
 class Child extends Parents {
@@ -131,6 +135,11 @@ class Child extends Parents {
 	public void strictfpMethod() //override
 	{
 		System.out.println("In side Child strictfp method");
+	}
+	
+	//public void noExceptionThrows() throws IOException {  //no override
+	public void noExceptionThrows() throws NullPointerException { //override 
+		
 	}
 	
 	
