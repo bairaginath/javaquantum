@@ -3,10 +3,14 @@ package com.quantum.javacore.file;
 
 import java.io.Serializable;
 
+class Parents implements Serializable{
+	public String name;
+}
 
-public class LoginFile implements Serializable
+
+public class LoginFile extends Parents implements Serializable
 {
-    String name;
+    //String name;
     String password;
     LoginFile(String name,String password)
     {

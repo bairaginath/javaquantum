@@ -1,7 +1,7 @@
 package com.quantum.javacore.basics;
 
 
-public class Add_without
+public class AddWithout
 {
    static int add(int a, int b)
     {

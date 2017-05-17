@@ -19,7 +19,7 @@ public class StrictfpExample {
 	
 	//strictfp abstract void m();//Illegal combination of modifiers  
 	
-	// strictfp int data=10;//modifier strictfp not allowed here
+	//strictfp int data=10;//modifier strictfp not allowed here
 	
 	public static void main(String[] args) {
 		

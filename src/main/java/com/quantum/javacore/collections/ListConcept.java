@@ -13,6 +13,7 @@ public class ListConcept {
 		arrayList.add(0,5); //create new List with empty with that index
 		System.out.println(arrayList.size());
 		System.out.println(arrayList.remove(1));
+		System.out.println(arrayList.size());
 		
 		List<Integer> linkedList=new LinkedList<Integer>();
 		linkedList.add(1);

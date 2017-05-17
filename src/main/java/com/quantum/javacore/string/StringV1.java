@@ -1,6 +1,7 @@
 package com.quantum.javacore.string;
 
 import java.util.Arrays;
+import java.lang.OutOfMemoryError;
 
 public class StringV1 {
 	

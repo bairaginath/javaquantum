@@ -27,8 +27,8 @@ public class CheckGC {
         for(int i=0;i<10;i++){
           d=new Date();
           rt.gc();
-        System.out.println("free memory"+rt.freeMemory());
-         // d=null;
+        System.out.println("free memory "+rt.freeMemory());
+          //d=null;
         }
         System.out.println(rt.freeMemory());
         rt.gc();

@@ -16,7 +16,7 @@ import java.io.ObjectInputStream;
 public class getObject {
     
     public static void main(String[] args) throws Exception {
-        FileInputStream fis=new FileInputStream("C:\\Users\\BAIRAGI\\Desktop\\mytext.txt");
+        FileInputStream fis=new FileInputStream("/tmp/mytext.txt");
           ObjectInputStream ois=new ObjectInputStream(fis);
         
           try {

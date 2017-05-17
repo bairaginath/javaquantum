@@ -12,10 +12,10 @@ public class Wrappers {
 		System.out.println(s.intValue());
 		Character myChar=new Character('3'); //which can only take a char
 		
-		int oct=Integer.parseInt("12",8);
+		int oct=Integer.parseInt("12",8); //convert decimal to octal
 		System.out.println(oct);
 	    
-		int hexa=Integer.parseInt("12",16);
+		int hexa=Integer.parseInt("12",16); //convert decimal to hexa
 		System.out.println(hexa);
 		
 		System.out.println(new Integer(1440)==1440);

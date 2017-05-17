@@ -14,11 +14,13 @@ public class Return {
         try{
             System.out.println("in side try block");
             
-           // int x=5/0;
-            System.exit(0);
+           int x=5/0;
+            //System.exit(0);
             return 5;
         }catch(Exception e){
+        	int x=5/0;
             System.out.println("in side catch block");
+            
             return 2;
         }
         finally{

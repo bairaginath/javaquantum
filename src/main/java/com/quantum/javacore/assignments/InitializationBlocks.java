@@ -21,8 +21,27 @@ public class InitializationBlocks {
 	{
 		System.out.println("In side static Block");
 	}
+	
+	class InnerClass {
+				
+		public InnerClass(){
+			System.out.println("Inside Inner class");
+		}
+
+		{
+			System.out.println("Inside inner simple block 1");
+		}
+		{
+			System.out.println("Insdie inner simple block 2");
+		}
+	}
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
-		System.out.println("In Side main Method"); //2
+		System.out.println("In Side main Method"); 
 		InitializationBlocks ib=new InitializationBlocks();
 	}
 

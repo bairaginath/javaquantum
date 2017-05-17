@@ -1,12 +1,8 @@
 package com.quantum.javacore.concurrent;
 
-import java.util.Stack;
-
-/* package whatever; // don't place package name! */
-
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 class Parents{
 	private int value=5;
@@ -22,19 +18,32 @@ class Parents{
 
 public class MyTest extends Parents
 {
-	public MyTest(){
-		System.out.println("child hashcode = "+this.hashCode());
-		     
-	}
 	
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		Parents p=new Parents();
-		MyTest id=new MyTest();
-          
-          boolean flag=p.equals(id);
-          System.out.println("result ="+flag);
+		ExecutorService executorService = Executors.newFixedThreadPool(10);
+		Runnable runnable=new Runnable(){
+			public void run(){
+				for(int i=0;i<10;i++){
+				    try {
+				    	Thread.sleep(1000);
+				    	System.out.println(Thread.currentThread().getName()+" "+i);
+				    }catch(InterruptedException ie){}
+					
+				}
+			}
+		};
+		executorService.execute(runnable);
+		
+		
+		
+		Future future=executorService.submit(runnable);	
+		System.out.println(future.isDone());
+		System.out.println(future.get());
+		System.out.println(future.isDone());
+		
+	
+		
 
-          
 	}
 }

@@ -9,6 +9,14 @@ public class Boxing {
 	
 	public static void main(String[] args) {
 		
+		int x=5;
+		Integer xI=new Integer(5);
+		System.out.println(x==xI);
+		
+		int y=1480;
+		Integer yI=new Integer(1480);
+		System.out.println(1480==yI);
+		
 	}
 
 }

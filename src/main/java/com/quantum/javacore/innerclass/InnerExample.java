@@ -21,6 +21,12 @@ class Outer{
 		   public int pub;
 		   int def;
 		   static int innerStaticValue=staticValue;
+		   
+		   static {
+			   System.out.println("Inside inner static class");
+		   }
+		   
+		   
 		}
 	
 	abstract class AbstractInner{

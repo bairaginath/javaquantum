@@ -1,5 +1,7 @@
 package com.quantum.javacore.string;
 
+import java.lang.OutOfMemoryError;
+
 public  class StringCompare
 {
     public static void main(String[] args) {

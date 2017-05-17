@@ -18,7 +18,7 @@ public class setObject {
     public static void main(String[] args) throws Exception {
         
        
-         FileOutputStream fos=new FileOutputStream("C:\\Users\\BAIRAGI\\Desktop\\mytext.txt",true);
+         FileOutputStream fos=new FileOutputStream("/tmp/mytext.txt",true);
          ObjectOutputStream oos=new ObjectOutputStream(fos);
           LoginFile ob1=new LoginFile("rabindra","lokesh");
           LoginFile ob2=new LoginFile("sibaram","ramesh");
