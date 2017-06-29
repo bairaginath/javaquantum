@@ -4,14 +4,14 @@ import java.util.Map;
 
 // Do not synchronize on non final field on synchronized block in Java. because reference of non final field may change any time and then different thread might synchronizing on different objects i.e. no synchronization at all. Best is to use String class, which is already immutable and declared final.
 
-class XYZ{
+class XYZA{
 	int data=5;
 }
 
 public class ThreadQuestion extends Thread {
 	
 	Map<Integer,String> map=null; 
-	final XYZ xyz=new XYZ();
+	final XYZA xyz=new XYZA();
 	
 	public void run(){
 		//synchronized (map) {} //it throws nullpointer exception
