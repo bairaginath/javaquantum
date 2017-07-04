@@ -12,13 +12,18 @@ public class PhoneDirectorySearch {
 			this.data=data;
 			this.children=new Node[10];
 		}
+		
+		@Override
+		public String toString() {
+			return ""+this.data+"";
+		}
 	}
 	
 	public static void insert(Node root,String phoneNumber){
 		Node temp=root;
 		for(int i=0;i<phoneNumber.length();i++){
 			int number=Character.getNumericValue(phoneNumber.charAt(i));
-			temp.children[number]=new Node(phoneNumber.charAt(i));
+			temp.children[number]=temp.children[number]==null?new Node(phoneNumber.charAt(i)):temp.children[number];
 			temp=temp.children[number];
 		}
 		temp.isLeaf=true;
@@ -33,7 +38,9 @@ public class PhoneDirectorySearch {
 		}
 		for(int i=0;i<node.children.length;i++){
 			if(node.children[i]!=null)
+			{	
 				printAllNumbers(prefix,suffix+node.children[i].data,node.children[i]);
+			}
 		}
 	}
 	
@@ -47,7 +54,9 @@ public class PhoneDirectorySearch {
 			    return;
 			}
 		}
+		System.out.println("=================");
 		printAllNumbers(prefix,"",temp);
+		System.out.println("=================");
 		
 	}
 	
@@ -56,7 +65,10 @@ public class PhoneDirectorySearch {
 		Node root=new Node('0');
 		insert(root,"8867887364");
 		insert(root,"8867887394");
+		insert(root,"8867564334");
 		search(root,"8867");
+		search(root,"88679");
+		search(root,"88675");
 		
 		
 	}
