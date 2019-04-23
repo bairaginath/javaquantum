@@ -1,6 +1,5 @@
 package com.quantum.javacore.generics;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,12 +21,42 @@ public class MyTest {
 	   <E> E setValue(E e){
 		   return e;
 	   }
+	   <T extends Number, E extends Animal > E getValue(T t){
+		   E e=null;
+		   return e;
+		   
+	   }
+	}
+	
+	
+//	@Override
+//	public int hashCode() {
+//		return 7;
+//	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return true;
 	}
 	
    public static void main(String[] args) {
 	ABC<Integer> abc=new ABC<>(5);
 	System.out.println(abc.getValue());
 	System.out.println(abc.setValue("bairagi"));
+	
+	Runnable r=()->{ System.out.println("bairagi");};
+	Object o=r;
+	System.out.println(new String("bairagi")==new String("bairagi"));
+	Object obj=new FruitTeste();
+	System.out.println(new FruitTeste().getClass().isInstance(obj));
+	new Object() { void getResult(){System.out.println("bairagi");}}.getResult();
+	
+	MyTest my1=new MyTest();
+	MyTest my2=new MyTest();
+	System.out.println(my1.hashCode()==my2.hashCode());
+	System.out.println(my1.equals(my2));
+	System.out.println(java.util.Objects.hash("bairagi", "007"));
+
 }	
 
 }

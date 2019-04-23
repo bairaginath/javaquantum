@@ -18,6 +18,10 @@ class Parents{
 
 public class MyTest extends Parents
 {
+	   public static String staticVariable="bairagi";
+	   
+	   public int getResult(){return 0;}
+	   //public String getResult(){return null;};
 	
 	public static void main (String[] args) throws java.lang.Exception
 	{
@@ -41,6 +45,7 @@ public class MyTest extends Parents
 		System.out.println(future.isDone());
 		System.out.println(future.get());
 		System.out.println(future.isDone());
+		
 		
 	
 		

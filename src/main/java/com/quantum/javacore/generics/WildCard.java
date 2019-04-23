@@ -5,11 +5,25 @@ import java.util.List;
 
 public class WildCard {
 	
+	//While the question mark works when declaring a reference for a variable,it does NOT work for generic class and method declarations.
+	Animal<? extends Number>  t;
+	//class NumberHolder <? extends Number>{}
+	//public < ? extends Number > void makeArrayList1(T t) { }
+	//valid declarion as below
+    public <T extends Number> void tWithExtendsAtMethod(T num) {}	
+    
+    public void tAsVariableAtMethod (Animal<? extends Number> animal) {}
+	
+	
 	public void addAnimalExtends(List<? extends Animal> animals){
 		
-		//animals.add(new Dog()); // NO! Can't add if we use <? extends Animal>
+	    //animals.add(new Dog()); // NO! Can't add if we use <? extends Animal>
 		
 	}
+	
+	
+	
+	
 	
 	public void addAnimalSuper(List<? super Dog> animals){
 		animals.add(new Dog());
@@ -41,6 +55,11 @@ public class WildCard {
 		   // List<?> foo = new ArrayList<? extends Animal>();
 		 //You cannot assign an Integer list to a reference that takes only a Dog
 		 // List<? extends Dog> cList = new ArrayList<Integer>();
+		 
+		 //but 
+		 List<? extends Dog> sameTypelist=new ArrayList<Dog>();
+		 List<? extends Dog> childTypelist=new ArrayList<PitbullDag>();
+		 
 		 List<? super Dog> bList = new ArrayList<Animal>();
 		 //The Dog is too "low" in the class hierarchy
 		// List<? super Animal> dList = new ArrayList<Dog>();

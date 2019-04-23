@@ -24,6 +24,10 @@ class Cat<E> extends Animal<E> {
 	
 }
 
+class PitbullDag<E> extends Dog<E>{
+	
+}
+
 public class PolymorphismAndGenerics {
 	
 public void checkAnimalsArray(Animal[] animals){

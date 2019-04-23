@@ -26,6 +26,10 @@ public class PassingVariable {
     	 a=a-b;
     	 
      }
+     static void objectHashCode(PassingVariable ob){
+    	    System.out.println(ob);
+     }
+     
      static void swapObject(PassingVariable ob1,PassingVariable ob2){
         PassingVariable temp=ob1;
         ob1=ob2;
@@ -64,6 +68,11 @@ public class PassingVariable {
          System.out.println("before swap a= "+a+" b="+b);
          primitiveSwap(a, b);
          System.out.println("after swap a= "+a+" b="+b);
+         
+         PassingVariable ob5=new PassingVariable(5);
+         System.out.println(ob5);
+         objectHashCode(ob5);
+         
          
          
 
