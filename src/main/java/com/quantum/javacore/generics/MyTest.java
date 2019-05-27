@@ -39,6 +39,27 @@ public class MyTest {
 		return true;
 	}
 	
+	 /* (non-Javadoc)
+	 * @see java.lang.Object#finalize()
+	 */
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("inside finalze method");
+		super.finalize();
+	}
+	
+	class BetterthenFinalize implements AutoCloseable {
+
+		/* (non-Javadoc)
+		 * @see java.lang.AutoCloseable#close()
+		 */
+		@Override
+		public void close() throws Exception {
+              System.out.println("inside clone method");			
+		}
+		
+	}
+	
    public static void main(String[] args) {
 	ABC<Integer> abc=new ABC<>(5);
 	System.out.println(abc.getValue());
@@ -56,6 +77,22 @@ public class MyTest {
 	System.out.println(my1.hashCode()==my2.hashCode());
 	System.out.println(my1.equals(my2));
 	System.out.println(java.util.Objects.hash("bairagi", "007"));
+	try{
+	    my1.finalize();
+	}catch(Throwable e){System.out.println(e);}
+	System.out.println(my1);
+	
+	System.gc();
+	
+	System.out.println(my1);
+	
+	MyTest.BetterthenFinalize btf=new MyTest().new BetterthenFinalize();
+	System.gc();
+	System.out.println(btf);
+	
+	
+	
+	
 
 }	
 

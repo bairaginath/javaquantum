@@ -1,7 +1,6 @@
 package com.quantum.javacore.java8;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 @FunctionalInterface
@@ -56,6 +55,8 @@ public class MyTest  {
 		List<String> output=alist.appendAllValueOnList(list,(String s)-> {return s+s.length();});
 		System.out.println(output);
 		
+		java.util.function.Function<String,String> function=(String name)->{return name+name.length();};
+		System.out.println(function.apply("bairagi"));
 		
 		
 		

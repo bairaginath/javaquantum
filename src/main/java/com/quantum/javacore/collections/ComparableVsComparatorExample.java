@@ -16,7 +16,12 @@ public class ComparableVsComparatorExample {
         Person(int age,String name){
         	this.age=age;
         	this.name=name;
+        	
         }
+        
+         public int getAge(){
+        	 return this.age;
+         }
 		public int compareTo(Person person) {
 			if(this.age<person.age)
 			{
@@ -56,6 +61,14 @@ public class ComparableVsComparatorExample {
 		});
 		
 		iterList(personList);
+		
+		//in java 8
+		Comparator<Person> compareByAge=Comparator.comparing(Person::getAge);
+		
+		Collections.sort(personList,compareByAge);
+		
+		iterList(personList);
+		
 		
 		
 		
