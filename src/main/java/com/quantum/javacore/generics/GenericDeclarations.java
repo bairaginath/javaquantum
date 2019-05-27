@@ -5,9 +5,14 @@ import java.util.List;
 
 public class GenericDeclarations<E> {
 	
-	public <T> void makeArrayList(T t){
+	public <T> void calculateNoReturn(T t){
 
 
+    } 
+	
+	public <T> T calculateWithReturn(T t){
+
+      return t;
     }
     
 	public static <T> List  makeList(T[ ] t){

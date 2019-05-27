@@ -35,6 +35,10 @@ public class EnumsExample {
 	    //Every enum has a static method, values(), that returns an array of the enum's values in the order they're declared.
 	    for(MyEnums cs: MyEnums.values())
 	    	System.out.println(cs + " " + cs.getOunces());
+	    
+	    for(CoffeeSize cs: CoffeeSize.values())
+	    	System.out.println(cs + " " + cs);
+	    
 	    	}
 	
 

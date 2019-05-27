@@ -12,7 +12,7 @@ class DogFood extends Food {
 
 class Animal{
 	
-	Food seekFood(){
+	Food seekFood() throws RuntimeException {
 		System.out.println("In side Animal seek Food");
 		return new Food();
 	}
