@@ -66,6 +66,9 @@ public class GlinkedList<E> implements Iterator<E> {
 		System.out.println(it.next());
 	
 	
+	
+	
+	
 }
   
 	
