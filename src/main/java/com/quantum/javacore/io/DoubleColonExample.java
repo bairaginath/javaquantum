@@ -60,6 +60,8 @@ public class DoubleColonExample {
          System.out.println(array.length);
          
         
+         
+        
         
         
          

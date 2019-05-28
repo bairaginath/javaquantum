@@ -37,7 +37,8 @@ public class EnumsExample {
 	    	System.out.println(cs + " " + cs.getOunces());
 	    
 	    for(CoffeeSize cs: CoffeeSize.values())
-	    	System.out.println(cs + " " + cs);
+	    	System.out.println(cs + " " + cs
+	    			);
 	    
 	    	}
 	
