@@ -1,6 +1,8 @@
 package com.quantum.ds.linkedlist;
 import java.util.Iterator;
 
+import com.quantum.ds.linkedlist.GlinkedList.Node;
+
 
 interface ReverseIterator<E>
 {
@@ -43,20 +45,83 @@ public class GdoubleLinkedList<E> implements Iterator<E>,ReverseIterator<E>  {
 	  Node<E> header;
 	  Node<E> tailer;
 	  Node<E> current;
+	  int size=0;
+	  
+	  public int length(){
+	       return size;
+	  }
+	  
 	  
 	  
 	  public boolean add(E e){
 		  if(header==null){
 			  header=new Node<>(e);
 			  tailer=header;
+			  size++;
 			  return true;
 			  
 		  }
 		  tailer.next=new Node<>(e);
 		  tailer.next.prev=tailer;
 		  tailer=tailer.next;
+		  size++;
 		  return true;
 	  }
+	  
+	  
+	  public boolean checkIndex(int index){
+		  if(index<0 || index>=size)
+			  throw new IndexOutOfBoundsException();
+		   return true;
+	  }
+	  
+	  public boolean remove(int index){
+		  if(checkIndex(index))
+		  {
+			  current=header;
+			  for(int i=0;i<index-1;i++)
+				    current=current.next;
+			  if(index==0){
+			        header=current.next;
+			        header.prev=null;
+			        current=null;
+			  }
+			  else if (current.next!=null && current.next.next!=null)
+			  {
+			      current.next=current.next.next;
+			      current.next.prev=current;
+			  }else 
+			      current.next=null;
+			      tailer=current;
+			      
+			  size--;
+		  }
+		  return true;
+	  }
+	  
+	  public boolean add(int index,E e){
+		  if(size==index || checkIndex(index))
+		  {
+			  Node<E> node=new Node(e);
+			  current=header;
+			  for(int i=0;i<index-1;i++)
+				    current=current.next;
+			  if(index==0)
+			  {  
+				    node.next=header;
+			        header=node;
+			  }
+			  else { 		      
+			      node.next=current.next;
+			      current.next=node;
+			  }
+			  size++;
+		  }
+		  return true;
+	  }
+	  
+	  
+	  
 	  public static void main(String[] args) {
 		GdoubleLinkedList<Integer> glist=new GdoubleLinkedList<>();
 		glist.add(1);
@@ -71,6 +136,17 @@ public class GdoubleLinkedList<E> implements Iterator<E>,ReverseIterator<E>  {
 		
 		System.out.println("Reverse Insertion order Iteration");
 		ReverseIterator<Integer> rit=glist.reverseIterator();
+		while (rit.hasPrev())
+			System.out.println(rit.prev());
+		
+		glist.remove(3);
+		System.out.println("length "+ glist.length()+" elements are ");
+		it=glist.iterator();
+		while (it.hasNext())
+			System.out.println(it.next());
+		
+		System.out.println("Reverse Insertion order Iteration");
+		rit=glist.reverseIterator();
 		while (rit.hasPrev())
 			System.out.println(rit.prev());
 		
