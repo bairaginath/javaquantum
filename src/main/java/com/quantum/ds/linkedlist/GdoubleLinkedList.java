@@ -90,9 +90,10 @@ public class GdoubleLinkedList<E> implements Iterator<E>,ReverseIterator<E>  {
 			  {
 			      current.next=current.next.next;
 			      current.next.prev=current;
-			  }else 
+			  }else {
 			      current.next=null;
-			      tailer=current;
+		      tailer=current;
+			  }
 			      
 			  size--;
 		  }
@@ -109,11 +110,17 @@ public class GdoubleLinkedList<E> implements Iterator<E>,ReverseIterator<E>  {
 			  if(index==0)
 			  {  
 				    node.next=header;
+				    header.prev=node;
 			        header=node;
 			  }
 			  else { 		      
 			      node.next=current.next;
 			      current.next=node;
+			      node.prev=current;
+			      if(node.next==null)
+			    	      tailer=node;
+			      else
+			    	  node.next.prev=node;
 			  }
 			  size++;
 		  }
@@ -150,6 +157,18 @@ public class GdoubleLinkedList<E> implements Iterator<E>,ReverseIterator<E>  {
 		while (rit.hasPrev())
 			System.out.println(rit.prev());
 		
+		
+		glist.add(3,7);
+		System.out.println("length "+ glist.length()+" elements are ");
+		it=glist.iterator();
+		while (it.hasNext())
+			System.out.println(it.next());
+		
+		System.out.println("Reverse Insertion order Iteration");
+		rit=glist.reverseIterator();
+		while (rit.hasPrev())
+			System.out.println(rit.prev());
+
 		
 		
 		
