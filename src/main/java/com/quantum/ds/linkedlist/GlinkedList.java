@@ -30,6 +30,11 @@ public class GlinkedList<E> implements Iterator<E> {
 		return this;
 	}
 	
+	public Iterator<E> iterator(Node<E> header) {
+		current=header;
+		return this;
+	}
+	
   class Node<E> {
 	  E e;
 	  Node next;
@@ -53,15 +58,46 @@ public class GlinkedList<E> implements Iterator<E> {
 	  tailer=tailer.next;
 	  return true;
   }
+  
+    public  Node<E> reverse(Node<E> node){
+    	   Node<E> first,mid,last;
+    	   first=node;
+    	   mid=first.next;
+    	   first.next=null;
+    	   if(mid.next==null){
+    		   mid.next=first;
+    		   first.next=null;
+    		   return mid;
+    	   }else {
+    		   while (mid!=null){
+    			   last=mid.next;
+    			   mid.next=first;
+    			   first=mid;
+    			   mid=last;
+    		   }
+    		   return first;
+    	   }
+    	
+    }
+  
+  
   public static void main(String[] args) {
 	GlinkedList<Integer> glist=new GlinkedList<>();
 	glist.add(1);
 	glist.add(2);
 	glist.add(3);
-	glist.add(4);
-	glist.add(5);
+    glist.add(4);
+    glist.add(5);
 	
 	Iterator<Integer> it=glist.iterator();
+	while (it.hasNext())
+		System.out.println(it.next());
+	
+	GlinkedList.Node first=glist.reverse(glist.header);
+	
+	System.out.println("revese with linear time");
+	
+	it=glist.iterator(first);
 	while (it.hasNext())
 		System.out.println(it.next());
 	
