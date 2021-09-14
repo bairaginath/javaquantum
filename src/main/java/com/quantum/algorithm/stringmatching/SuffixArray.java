@@ -3,7 +3,7 @@ package com.quantum.algorithm.stringmatching;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import jdk.nashorn.internal.runtime.regexp.joni.SearchAlgorithm;
+
 
 //better alogrithm http://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/
 
