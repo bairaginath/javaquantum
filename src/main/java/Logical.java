@@ -4,7 +4,7 @@ public class Logical {
 	{
 		byte a=5;
 		byte b=10;
-		byte c=15;
+		byte c=15	;
 		
 		if(!(a<b))
 			System.out.println("a is biger than b");
